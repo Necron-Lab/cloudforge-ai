@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "CloudForge AI läuft 🚀"}
+    return {"message": "CloudForge AI läuft 🔥"}
 
 @app.get("/health")
 def health():
