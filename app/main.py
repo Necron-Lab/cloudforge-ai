@@ -1,15 +1,8 @@
 from fastapi import FastAPI
+from app.routers import health, hello, ai
 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return {"message": "CloudForge AI läuft 🔥"}
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-@app.get("/hello")
-def hello(name: str = "User"):
-    return {"message": f"Hello {name}"}
+app.include_router(health.router)
+app.include_router(hello.router)
+app.include_router(ai.router)
